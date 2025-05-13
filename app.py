@@ -50,8 +50,8 @@ unique_people = sorted(combined_df['assigned_to'].unique())
 
 # Init app
 app = dash.Dash(__name__)
-server = app.server  # Expose server for gunicorn
 app.title = "John Kelly Weekly Dashboard"
+server = app.server  # 🔥 Required for Render to work
 
 # Layout
 app.layout = html.Div([
@@ -168,6 +168,9 @@ def update_chart(selected_group):
 
     return fig
 
-# Run
+# Expose WSGI server for Render
+server = app.server
+
+# Run locally
 if __name__ == '__main__':
     app.run_server(debug=True) 
