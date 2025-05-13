@@ -14,9 +14,8 @@ import plotly.graph_objects as go
 import os
 
 # Load data
-base_dir = r"C:\Users\Jared\Desktop\John Kelly Dashboard"
-incident_df = pd.read_csv(os.path.join(base_dir, 'incident.csv'), encoding='latin1')
-task_df = pd.read_csv(os.path.join(base_dir, 'sc_task.csv'), encoding='latin1')
+incident_df = pd.read_csv('incident.csv', encoding='latin1')
+task_df = pd.read_csv('sc_task.csv', encoding='latin1')
 
 # Normalize columns
 incident_df.columns = incident_df.columns.str.strip().str.lower()
